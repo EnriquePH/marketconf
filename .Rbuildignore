@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 draft
 TERMS OF USE
+^README\.Rmd$
+^README-.*\.png$

@@ -7,11 +7,17 @@
 US_confidence_indices_url(symbol = "US1YI")
 }
 \arguments{
-\item{symbol}{A string with the Confidence Index symbol}
+\item{symbol}{A string with a Confidence Index symbol:
+\itemize{
+\item US1YI: U.S. One Year Index
+\item USVI: U.S. Crash Confidence Index
+\item USBODI: U.S. Buy-On-Dips Confidence Index
+\item USCI: U.S. Valuation Index
+}}
 }
 \value{
 A string with the \strong{Yale School of Management}'s web
- page symbol url
+page symbol url
 }
 \description{
 Find Confidence Index symbol url
@@ -23,4 +29,6 @@ US_confidence_indices_url("USCI")
 }
 \seealso{
 \code{\link{US_confidence_indices}}
+
+\code{\link{get_index}}
 }

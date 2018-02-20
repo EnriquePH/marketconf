@@ -9,12 +9,18 @@
 
 #' Find Confidence Index symbol url
 #'
-#' @param symbol A string with the Confidence Index symbol
+#' @param symbol A string with a Confidence Index symbol:
+#' * US1YI: U.S. One Year Index
+#' * USVI: U.S. Crash Confidence Index
+#' * USBODI: U.S. Buy-On-Dips Confidence Index
+#' * USCI: U.S. Valuation Index
+#' @md
 #' @importFrom magrittr "%>%" extract2
 #' @importFrom dplyr filter select
 #' @return A string with the \strong{Yale School of Management}'s web
 #'  page symbol url
 #' @seealso \code{\link{US_confidence_indices}}
+#' @seealso \code{\link{get_index}}
 #' @export
 #'
 #' @examples
