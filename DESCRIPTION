@@ -7,8 +7,15 @@ Authors@R: person("Enrique", "Pérez Herrero",
     email = "eph.project1500@gmail.com",
     role = c("aut", "cre", "cph"))
 Maintainer: Enrique Pérez Herrero <eph.project1500@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description:
+    This R package reads confidence indexes data from Yale School of
+    Management's International Center for Finance web page.
+    The four U.S. Stock market confidence indexes are derived monthly from
+    survey data on the behavior of investors, these indexes are:
+        U.S. One Year Index.
+        U.S. Crash Confidence Index.
+        U.S. Buy-On-Dips Confidence Index.
+        U.S. Valuation Index.
 Depends: R (>= 3.4.3)
 License: file LICENSE
 Encoding: UTF-8
