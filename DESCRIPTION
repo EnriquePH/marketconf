@@ -1,0 +1,19 @@
+Package: marketconf
+Type: Package
+Title: Stock Market Confidence Indices from Yale School of Management
+Date: 2018-02-19
+Version: 0.1.0
+Authors@R: person("Enrique", "Pérez Herrero",
+    email = "eph.project1500@gmail.com",
+    role = c("aut", "cre", "cph"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+Depends: R (>= 3.4.3)
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    magrittr,
+    dplyr
+RoxygenNote: 6.0.1
