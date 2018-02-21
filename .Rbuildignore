@@ -5,3 +5,4 @@ TERMS OF USE
 ^README\.Rmd$
 ^README-.*\.png$
 ^\.travis\.yml$
+^appveyor\.yml$
