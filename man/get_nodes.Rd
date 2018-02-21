@@ -11,9 +11,9 @@ get_nodes(symbol = "US1YI")
 \item{symbol}{A string with a Confidence Index symbol:
 \itemize{
 \item US1YI: U.S. One Year Index
-\item USVI: U.S. Crash Confidence Index
+\item USVI: U.S. Valuation Index
 \item USBODI: U.S. Buy-On-Dips Confidence Index
-\item USCI: U.S. Valuation Index
+\item USCI: U.S. Crash Confidence Index
 }}
 }
 \value{
@@ -24,6 +24,8 @@ Get html nodes from confidence indices at
 Yale School of Management's web
 }
 \note{
+The default value for \code{symbol} is "US1YI".
+
 This function is only for internal use.
 }
 \examples{
@@ -35,4 +37,6 @@ get_nodes("US1YI")
 \code{\link{get_index}}
 
 \code{\link{find_table_index}}
+
+\code{\link{check_index_symbol}}
 }

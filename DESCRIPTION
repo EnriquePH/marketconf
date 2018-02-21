@@ -16,7 +16,7 @@ Description:
         U.S. Valuation Index.
         U.S. Buy-On-Dips Confidence Index.
         U.S. Crash Confidence Index.
-Depends: R (>= 3.4.3)
+Depends: R (>= 3.4.1)
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -27,3 +27,6 @@ Imports:
     xml2,
     lubridate
 RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

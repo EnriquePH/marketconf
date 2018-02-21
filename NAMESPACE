@@ -2,8 +2,10 @@
 
 export(US_confidence_indices)
 export(US_confidence_indices_url)
+export(check_index_symbol)
 export(get_index)
 importFrom(dplyr,filter)
+importFrom(dplyr,full_join)
 importFrom(dplyr,mutate)
 importFrom(dplyr,select)
 importFrom(lubridate,myd)

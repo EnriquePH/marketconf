@@ -27,7 +27,6 @@
 #' }
 US_confidence_indices <- function() {
   Dir <- NULL
-  Url <- NULL
   base_url <- paste0(
     "https://som.yale.edu/faculty-research/",
     "our-centers-initiatives/international-center-finance/",

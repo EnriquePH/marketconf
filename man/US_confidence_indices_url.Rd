@@ -10,9 +10,9 @@ US_confidence_indices_url(symbol = "US1YI")
 \item{symbol}{A string with a Confidence Index symbol:
 \itemize{
 \item US1YI: U.S. One Year Index
-\item USVI: U.S. Crash Confidence Index
+\item USVI: U.S. Valuation Index
 \item USBODI: U.S. Buy-On-Dips Confidence Index
-\item USCI: U.S. Valuation Index
+\item USCI: U.S. Crash Confidence Index
 }}
 }
 \value{

@@ -10,9 +10,9 @@ get_index(symbol = "US1YI")
 \item{symbol}{A string with a Confidence Index symbol:
 \itemize{
 \item US1YI: U.S. One Year Index
-\item USVI: U.S. Crash Confidence Index
+\item USVI: U.S. Valuation Index
 \item USBODI: U.S. Buy-On-Dips Confidence Index
-\item USCI: U.S. Valuation Index
+\item USCI: U.S. Crash Confidence Index
 }}
 }
 \value{
@@ -21,6 +21,9 @@ A \code{data.table} with index value and standard deviation by date.
 \description{
 Stock market confidence indexes are derived from survey data on
 the behavior of U.S. investors.
+}
+\note{
+The default value for \code{symbol} is "US1YI".
 }
 \examples{
 \dontrun{

@@ -11,6 +11,7 @@
 #' Yale School of Management's web
 #'
 #' @inheritParams US_confidence_indices_url
+#' @note The default value for \code{symbol} is "US1YI".
 #' @note This function is only for internal use.
 #' @importFrom magrittr "%>%"
 #' @importFrom xml2 read_html
@@ -18,6 +19,7 @@
 #' @return A \code{xml_nodeset} class data with indices information
 #' @seealso \code{\link{get_index}}
 #' @seealso \code{\link{find_table_index}}
+#' @seealso \code{\link{check_index_symbol}}
 #' @md
 #' @examples
 #' \dontrun{
@@ -25,6 +27,7 @@
 #' }
 get_nodes <- function(symbol = "US1YI") {
   symbol %>%
+    check_index_symbol %>%
     US_confidence_indices_url %>%
     xml2::read_html() %>%
     rvest::html_nodes("table")
@@ -54,9 +57,8 @@ find_table_index <- function(nodes, investor = "Institutional") {
   Date <- NULL
   Value <- NULL
   StdErr <- NULL
-  Investor <- NULL
   type_investors <- c("Institutional", "Individual")
-  if(!(investor %in% type_investors)) {
+  if (!(investor %in% type_investors)) {
     stop(paste("Type of investor is not:", type_investors))
   }
   n_table <- ifelse(investor == "Institutional", 1L, 3L)
@@ -77,7 +79,9 @@ find_table_index <- function(nodes, investor = "Institutional") {
 #' Stock market confidence indexes are derived from survey data on
 #' the behavior of U.S. investors.
 #' @inheritParams US_confidence_indices_url
-#'
+#' @note The default value for \code{symbol} is "US1YI".
+#' @importFrom dplyr full_join mutate
+#' @importFrom magrittr set_colnames "%>%"
 #' @return A \code{data.table} with index value and standard deviation by date.
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{US_confidence_indices_url}}
@@ -94,7 +98,9 @@ find_table_index <- function(nodes, investor = "Institutional") {
 #' }
 get_index <- function(symbol = "US1YI") {
   Investor <- NULL
-  index_nodes <- get_nodes(symbol)
+  index_nodes <- symbol %>%
+    check_index_symbol %>%
+    get_nodes
   index_names <- c("Date", paste0(symbol, c(".Value", ".StdErr")), "Investor")
   dplyr::full_join(
     find_table_index(index_nodes, investor = "Institutional"),

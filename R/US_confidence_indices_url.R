@@ -11,9 +11,9 @@
 #'
 #' @param symbol A string with a Confidence Index symbol:
 #' * US1YI: U.S. One Year Index
-#' * USVI: U.S. Crash Confidence Index
+#' * USVI: U.S. Valuation Index
 #' * USBODI: U.S. Buy-On-Dips Confidence Index
-#' * USCI: U.S. Valuation Index
+#' * USCI: U.S. Crash Confidence Index
 #' @md
 #' @importFrom magrittr "%>%" extract2
 #' @importFrom dplyr filter select
@@ -31,7 +31,7 @@ US_confidence_indices_url <- function(symbol = "US1YI") {
   Symbol <- NULL
   Url <- NULL
   df <- US_confidence_indices()
-  if(!(symbol %in% df$Symbol)) {
+  if (!(symbol %in% df$Symbol)) {
     stop("Symbol not found")
   } else {
     df %>%
