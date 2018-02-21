@@ -3,6 +3,7 @@ output:
   md_document:
     variant: markdown_github
 ---
+[![Build Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf)
 ![License](https://img.shields.io/:license-mit-blue.svg)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -20,16 +21,8 @@ knitr::opts_chunk$set(
 The R package `marketconf` reads **U. S. Stock Market Confidence Indexes**
 data from [Yale School of Management's International Center for Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence) web page.
 
-The four U.S. Stock market confidence indexes are derived, monthly, from
-survey data on the behavior of investors, these indexes are:
-
-* __US1YI__: [U.S. One Year Index](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/united-states-one-year-index)
-
-* __USVI__: [U.S. Valuation Index](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/united-states-valuation-index)
-
-* __USBODI__: [U.S. Buy-On-Dips Confidence Index](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/united-states-buy-dips-confidence-index)
-
-* __USCI__: [U.S. Crash Confidence Index](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/us-crash-confidence-index)
+This package is for stock market prediction and risk valuation, and
+it can be used with other packages like [`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html), [`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or [`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
 
 ## Package installation
 
@@ -38,12 +31,25 @@ library(devtools)
 devtools::install_github("EnriquePH/marketconf")
 ```
 
-## Example
+## Examples
+
+### List indices
+
+The four U.S. Stock market confidence indexes are derived, monthly, from
+survey data on the behavior of investors, these indexes are:
+
+```{r}
+library(marketconf)
+library(knitr)
+
+kable(US_confidence_indices())
+```
+
+### Plotting
 
 This is a basic example which plots __U.S. Valuation Index__:
 
 ```{r example}
-library(marketconf)
 library(ggplot2)
 
 index_df <- get_index("USVI")
@@ -51,6 +57,7 @@ index_df <- get_index("USVI")
 ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
   geom_line()
 ```
+
 
 ## License
 
