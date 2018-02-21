@@ -46,9 +46,9 @@ US_confidence_indices <- function() {
     ),
     Description = c(
       "U.S. One Year Index",
-      "U.S. Crash Confidence Index",
+      "U.S. Valuation Index",
       "U.S. Buy-On-Dips Confidence Index",
-      "U.S. Valuation Index"),
+      "U.S. Crash Confidence Index"),
     stringsAsFactors = FALSE) %>%
     dplyr::mutate(Url = paste0(base_url, Dir)) %>%
     dplyr::select(-Dir)
