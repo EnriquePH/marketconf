@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf) ![License](https://img.shields.io/:license-mit-blue.svg)
+![License](https://img.shields.io/:license-mit-blue.svg) [![Build Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 Package `marketconf`: Stock Market Confidence Indexes
@@ -26,7 +26,6 @@ The four U.S. Stock market confidence indexes are derived, monthly, from survey 
 ``` r
 library(marketconf)
 library(knitr)
-
 kable(US_confidence_indices())
 ```
 
