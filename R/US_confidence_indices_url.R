@@ -30,13 +30,8 @@
 US_confidence_indices_url <- function(symbol = "US1YI") {
   Symbol <- NULL
   Url <- NULL
-  df <- US_confidence_indices()
-  if (!(symbol %in% df$Symbol)) {
-    stop("Symbol not found")
-  } else {
-    df %>%
-      dplyr::filter(Symbol == symbol) %>%
-      dplyr::select(Url) %>%
-      magrittr::extract2(1L)
-  }
+  US_confidence_indices() %>%
+    dplyr::filter(Symbol == check_index_symbol(symbol)) %>%
+    dplyr::select(Url) %>%
+    magrittr::extract2(1L)
 }

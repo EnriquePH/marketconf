@@ -43,4 +43,6 @@ Stock Market Confidence Indices: \href{https://som.yale.edu/faculty-research/cen
 \code{\link{find_table_index}}
 
 \code{\link{get_nodes}}
+
+\code{\link{check_index_symbol}}
 }

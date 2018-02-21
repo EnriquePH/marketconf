@@ -33,9 +33,9 @@ kable(US_confidence_indices())
 | Symbol | Description                       | Url                                                                                                                                                                       |
 |:-------|:----------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | US1YI  | U.S. One Year Index               | <https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/united-states-one-year-index>            |
-| USVI   | U.S. Crash Confidence Index       | <https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/united-states-valuation-index>           |
+| USVI   | U.S. Valuation Index              | <https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/united-states-valuation-index>           |
 | USBODI | U.S. Buy-On-Dips Confidence Index | <https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/united-states-buy-dips-confidence-index> |
-| USCI   | U.S. Valuation Index              | <https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/us-crash-confidence-index>               |
+| USCI   | U.S. Crash Confidence Index       | <https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence-indices/us-crash-confidence-index>               |
 
 ### Plotting
 
@@ -44,10 +44,12 @@ This is a basic example which plots **U.S. Valuation Index**:
 ``` r
 library(ggplot2)
 
-index_df <- get_index("USVI")
+index_symbol <- "USVI"
+index_df <- get_index(index_symbol)
 
 ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
-  geom_line()
+  geom_line() +
+  ggtitle(get_index_description(index_symbol))
 ```
 
 ![](README-example-1.png)

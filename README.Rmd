@@ -41,7 +41,6 @@ survey data on the behavior of investors, these indexes are:
 ```{r}
 library(marketconf)
 library(knitr)
-
 kable(US_confidence_indices())
 ```
 
@@ -52,10 +51,12 @@ This is a basic example which plots __U.S. Valuation Index__:
 ```{r example}
 library(ggplot2)
 
-index_df <- get_index("USVI")
+index_symbol <- "USVI"
+index_df <- get_index(index_symbol)
 
 ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
-  geom_line()
+  geom_line() +
+  ggtitle(get_index_description(index_symbol))
 ```
 
 
