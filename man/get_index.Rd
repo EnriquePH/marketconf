@@ -9,14 +9,14 @@ get_index(symbol = "US1YI")
 \arguments{
 \item{symbol}{A string with a Confidence Index symbol:
 \itemize{
-\item US1YI: U.S. One Year Index
-\item USVI: U.S. Valuation Index
-\item USBODI: U.S. Buy-On-Dips Confidence Index
-\item USCI: U.S. Crash Confidence Index
+\item \emph{US1YI}: U.S. One Year Index
+\item \emph{USVI}: U.S. Valuation Index
+\item \emph{USBODI}: U.S. Buy-On-Dips Confidence Index
+\item \emph{USCI}: U.S. Crash Confidence Index
 }}
 }
 \value{
-A \code{data.table} with index value and standard deviation by date.
+A \code{data.table} with index value, standard deviation, and type of investor, by date.
 }
 \description{
 Stock market confidence indexes are derived from survey data on
@@ -43,6 +43,10 @@ Stock Market Confidence Indices: \href{https://som.yale.edu/faculty-research/cen
 \code{\link{find_table_index}}
 
 \code{\link{get_nodes}}
+
+\code{\link{get_index_description}}
+
+\code{\link{get_index_info}}
 
 \code{\link{check_index_symbol}}
 }

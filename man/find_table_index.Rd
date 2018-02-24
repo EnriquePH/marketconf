@@ -19,6 +19,8 @@ A \code{data.frame} with ancillary data.
 Extract indices data from html node
 }
 \note{
+The default value for \code{investor} is "Institutional".
+
 This function is only for internal use.
 }
 \examples{

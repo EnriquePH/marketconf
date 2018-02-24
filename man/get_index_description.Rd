@@ -2,29 +2,30 @@
 % Please edit documentation in R/get_index_description.R
 \name{get_index_description}
 \alias{get_index_description}
-\title{Find Confidence Index description}
+\title{Get Confidence Index description}
 \usage{
 get_index_description(symbol = "US1YI")
 }
 \arguments{
 \item{symbol}{A string with a Confidence Index symbol:
 \itemize{
-\item US1YI: U.S. One Year Index
-\item USVI: U.S. Valuation Index
-\item USBODI: U.S. Buy-On-Dips Confidence Index
-\item USCI: U.S. Crash Confidence Index
+\item \emph{US1YI}: U.S. One Year Index
+\item \emph{USVI}: U.S. Valuation Index
+\item \emph{USBODI}: U.S. Buy-On-Dips Confidence Index
+\item \emph{USCI}: U.S. Crash Confidence Index
 }}
 }
 \value{
 A string with the Confidence Index description
 }
 \description{
-Find Confidence Index description
+Get Confidence Index description
+}
+\note{
+The default value for \code{symbol} is "US1YI".
 }
 \examples{
-\dontrun{
 get_index_description("USCI")
-}
 }
 \seealso{
 \code{\link{US_confidence_indices}}

@@ -27,4 +27,8 @@ Stock Market Confidence Indices: \href{https://som.yale.edu/faculty-research/cen
 \code{\link{US_confidence_indices_url}}
 
 \code{\link{get_index}}
+
+\code{\link{get_index_description}}
+
+\code{\link{get_index_info}}
 }

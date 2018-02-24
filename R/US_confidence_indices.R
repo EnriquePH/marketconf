@@ -14,6 +14,8 @@
 #'
 #' @seealso \code{\link{US_confidence_indices_url}}
 #' @seealso \code{\link{get_index}}
+#' @seealso \code{\link{get_index_description}}
+#' @seealso \code{\link{get_index_info}}
 #' @references \emph{Yale School of Management}, International Center for Finance: \href{https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence}{Stock Market Confidence Indices}
 #' @references Stock Market Confidence Indices: \href{https://som.yale.edu/faculty-research/centers-initiatives/international-center-for-finance/data/stock-market-confidence-indices/stock-market-confidence-indices}{Terms of Use}
 #'
@@ -47,7 +49,19 @@ US_confidence_indices <- function() {
       "U.S. One Year Index",
       "U.S. Valuation Index",
       "U.S. Buy-On-Dips Confidence Index",
-      "U.S. Crash Confidence Index"),
+      "U.S. Crash Confidence Index"
+      ),
+    Info = c(
+      paste("The percent of the population",
+            "expecting an increase in the Dow in the coming year."),
+      paste("The percent of the population",
+            "who think that the market is not too high."),
+      paste("The percent of the population",
+            "expecting a rebound the next day should the market",
+            "ever drop 3% in one day."),
+      paste("The percent of the population", "who attach little probability",
+            " to a stock market crash in the next-six months.")
+      ),
     stringsAsFactors = FALSE) %>%
     dplyr::mutate(Url = paste0(base_url, Dir)) %>%
     dplyr::select(-Dir)

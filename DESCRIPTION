@@ -1,8 +1,8 @@
 Package: marketconf
 Type: Package
 Title: Stock Market Confidence Indices from Yale School of Management
-Date: 2018-02-21
-Version: 0.1.4
+Date: 2018-02-24
+Version: 1.0.0
 Authors@R: person("Enrique", "Pérez Herrero",
     email = "eph.project1500@gmail.com",
     role = c("aut", "cre", "cph"))

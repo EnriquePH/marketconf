@@ -12,7 +12,7 @@
 #'
 #' This function validates the symbol input.
 #' @inheritParams US_confidence_indices_url
-#'
+#' @md
 #' @return A string with the \code{symbol} or an error if it
 #' is not found.
 #'

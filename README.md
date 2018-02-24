@@ -1,4 +1,4 @@
-![License](https://img.shields.io/:license-mit-blue.svg) [![Build Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
+![License](https://img.shields.io/:license-mit-blue.svg) [![Build Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QMR7L28X52GN2)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 Package `marketconf`: Stock Market Confidence Indexes

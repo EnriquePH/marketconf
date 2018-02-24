@@ -1,13 +1,13 @@
 #  ----------------------------------------------------------------------------
 #  marketconf PACKAGE
 #  Stock Market Confidence Indices in R
-#  File: get_index_description.R
+#  File: get_index_info.R
 #  (c) 2018 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  The MIT License (MIT)
 #  ------------------------------------------------------------------------
 
-#' Get Confidence Index description
+#' Find Confidence Index information
 #'
 #' @inheritParams US_confidence_indices_url
 #' @md
@@ -17,16 +17,17 @@
 #' @return A string with the Confidence Index description
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{get_index}}
+#' @seealso \code{\link{get_index_description}}
 #' @seealso \code{\link{check_index_symbol}}
 #'
 #' @examples
-#' get_index_description("USCI")
+#' get_index_info("USCI")
 #' @export
-get_index_description <- function(symbol = "US1YI") {
+get_index_info <- function(symbol = "US1YI") {
   Symbol <- NULL
-  Description <- NULL
+  Info <- NULL
     US_confidence_indices() %>%
       dplyr::filter(Symbol == check_index_symbol(symbol)) %>%
-      dplyr::select(Description) %>%
+      dplyr::select(Info) %>%
       magrittr::extract2(1L)
 }

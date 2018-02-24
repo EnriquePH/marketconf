@@ -49,6 +49,12 @@ kable(US_confidence_indices())
 index_symbol <- "USBODI"
 get_index_description(index_symbol)
 ```
+# Search for index symbol information
+
+```{r}
+index_symbol <- "USBODI"
+get_index_info(index_symbol)
+```
 
 # Load a given index into a `data.frame`
 

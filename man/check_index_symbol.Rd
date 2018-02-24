@@ -9,10 +9,10 @@ check_index_symbol(symbol)
 \arguments{
 \item{symbol}{A string with a Confidence Index symbol:
 \itemize{
-\item US1YI: U.S. One Year Index
-\item USVI: U.S. Valuation Index
-\item USBODI: U.S. Buy-On-Dips Confidence Index
-\item USCI: U.S. Crash Confidence Index
+\item \emph{US1YI}: U.S. One Year Index
+\item \emph{USVI}: U.S. Valuation Index
+\item \emph{USBODI}: U.S. Buy-On-Dips Confidence Index
+\item \emph{USCI}: U.S. Crash Confidence Index
 }}
 }
 \value{

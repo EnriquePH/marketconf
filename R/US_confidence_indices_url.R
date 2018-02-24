@@ -7,19 +7,22 @@
 #  The MIT License (MIT)
 #  ------------------------------------------------------------------------
 
-#' Find Confidence Index symbol url
+#' Get Confidence Index symbol url
 #'
 #' @param symbol A string with a Confidence Index symbol:
-#' * US1YI: U.S. One Year Index
-#' * USVI: U.S. Valuation Index
-#' * USBODI: U.S. Buy-On-Dips Confidence Index
-#' * USCI: U.S. Crash Confidence Index
+#' * \emph{US1YI}: U.S. One Year Index
+#' * \emph{USVI}: U.S. Valuation Index
+#' * \emph{USBODI}: U.S. Buy-On-Dips Confidence Index
+#' * \emph{USCI}: U.S. Crash Confidence Index
 #' @md
+#' @note The default value for \code{symbol} is "US1YI".
 #' @importFrom magrittr "%>%" extract2
 #' @importFrom dplyr filter select
 #' @return A string with the \strong{Yale School of Management}'s web
 #'  page symbol url
 #' @seealso \code{\link{US_confidence_indices}}
+#' @seealso \code{\link{get_index_description}}
+#' @seealso \code{\link{get_index_info}}
 #' @seealso \code{\link{get_index}}
 #' @export
 #'

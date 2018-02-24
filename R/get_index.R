@@ -11,6 +11,7 @@
 #' Yale School of Management's web
 #'
 #' @inheritParams US_confidence_indices_url
+#' @md
 #' @note The default value for \code{symbol} is "US1YI".
 #' @note This function is only for internal use.
 #' @importFrom magrittr "%>%"
@@ -39,6 +40,7 @@ get_nodes <- function(symbol = "US1YI") {
 #' @param nodes A \code{xml_nodeset} class data with indices information
 #' @param investor A string with the type of investor:
 #' \code{"Institutional"} or \code{"Individual"}
+#' @note The default value for \code{investor} is "Institutional".
 #' @importFrom magrittr "%>%" set_colnames extract2 extract
 #' @importFrom utils tail
 #' @importFrom rvest html_table
@@ -82,11 +84,13 @@ find_table_index <- function(nodes, investor = "Institutional") {
 #' @note The default value for \code{symbol} is "US1YI".
 #' @importFrom dplyr full_join mutate
 #' @importFrom magrittr set_colnames "%>%"
-#' @return A \code{data.table} with index value and standard deviation by date.
+#' @return A \code{data.table} with index value, standard deviation, and type of investor, by date.
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{US_confidence_indices_url}}
 #' @seealso \code{\link{find_table_index}}
 #' @seealso \code{\link{get_nodes}}
+#' @seealso \code{\link{get_index_description}}
+#' @seealso \code{\link{get_index_info}}
 #' @seealso \code{\link{check_index_symbol}}
 #'
 #' @references \emph{Yale School of Management}, International Center for Finance: \href{https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence}{Stock Market Confidence Indices}
