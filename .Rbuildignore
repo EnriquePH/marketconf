@@ -6,3 +6,4 @@ TERMS OF USE
 ^README-.*\.png$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^\.github$

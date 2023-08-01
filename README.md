@@ -1,7 +1,9 @@
-![License](https://img.shields.io/:license-mit-blue.svg) [![Build
-Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml)[![AppVeyor
+Build
+Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)![License](https://img.shields.io/:license-mit-blue.svg)
+<!-- badges: end -->
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -13,8 +15,9 @@ for
 Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence)
 web page.
 
-This package is for stock market prediction and risk valuation, and it
-can be used with other packages like
+This package is designed for stock market prediction and risk valuation,
+and it is compatible with other packages like:
+
 [`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html),
 [`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or
 [`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
@@ -30,8 +33,8 @@ devtools::install_github("EnriquePH/marketconf")
 
 ### Listing confidence indices
 
-The four U.S. Stock market confidence indexes are derived, monthly, from
-survey data on the behavior of investors, these indexes are:
+The four U.S. stock market confidence indexes are derived monthly from
+survey data on investors’ behavior. These indexes are:
 
 ``` r
 library(marketconf)
