@@ -9,8 +9,8 @@ get_index(symbol = "US1YI")
 \arguments{
 \item{symbol}{A string with a Confidence Index symbol:
 \itemize{
-\item \emph{US1YI}: U.S. One Year Index
-\item \emph{USVI}: U.S. Valuation Index
+\item \emph{US1YI}: U.S. One-Year Confidence Index
+\item \emph{USVI}: U.S. Valuation Confidence Index
 \item \emph{USBODI}: U.S. Buy-On-Dips Confidence Index
 \item \emph{USCI}: U.S. Crash Confidence Index
 }}
@@ -39,10 +39,6 @@ Stock Market Confidence Indices: \href{https://som.yale.edu/faculty-research/cen
 \code{\link{US_confidence_indices}}
 
 \code{\link{US_confidence_indices_url}}
-
-\code{\link{find_table_index}}
-
-\code{\link{get_nodes}}
 
 \code{\link{get_index_description}}
 

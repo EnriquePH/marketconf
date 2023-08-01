@@ -2,7 +2,7 @@ Package: marketconf
 Type: Package
 Title: Stock Market Confidence Indices from Yale School of Management
 Date: 2018-02-24
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: person("Enrique", "Pérez Herrero",
     email = "eph.project1500@gmail.com",
     role = c("aut", "cre", "cph"))
@@ -12,8 +12,8 @@ Description:
     Management's International Center for Finance web page.
     The four U.S. Stock market confidence indexes are derived, monthly, from
     survey data on the behavior of investors, these indexes are:
-        U.S. One Year Index.
-        U.S. Valuation Index.
+        U.S. One Year Confidence Index.
+        U.S. Valuation Confidence Index.
         U.S. Buy-On-Dips Confidence Index.
         U.S. Crash Confidence Index.
 Depends: R (>= 3.4.1)
@@ -23,10 +23,8 @@ LazyData: true
 Imports:
     magrittr,
     dplyr,
-    rvest,
-    xml2,
     lubridate
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.3
 Suggests: knitr,
     rmarkdown,
     ggplot2,

@@ -10,8 +10,8 @@
 #' Get Confidence Index symbol url
 #'
 #' @param symbol A string with a Confidence Index symbol:
-#' * \emph{US1YI}: U.S. One Year Index
-#' * \emph{USVI}: U.S. Valuation Index
+#' * \emph{US1YI}: U.S. One-Year Confidence Index
+#' * \emph{USVI}: U.S. Valuation Confidence Index
 #' * \emph{USBODI}: U.S. Buy-On-Dips Confidence Index
 #' * \emph{USCI}: U.S. Crash Confidence Index
 #' @md

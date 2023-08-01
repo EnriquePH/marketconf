@@ -7,88 +7,18 @@
 #  The MIT License (MIT)
 #  ----------------------------------------------------------------------------
 
-#' Get html nodes from confidence indices at
-#' Yale School of Management's web
-#'
-#' @inheritParams US_confidence_indices_url
-#' @md
-#' @note The default value for \code{symbol} is "US1YI".
-#' @note This function is only for internal use.
-#' @importFrom magrittr "%>%"
-#' @importFrom xml2 read_html
-#' @importFrom rvest html_nodes
-#' @return A \code{xml_nodeset} class data with indices information
-#' @seealso \code{\link{get_index}}
-#' @seealso \code{\link{find_table_index}}
-#' @seealso \code{\link{check_index_symbol}}
-#' @md
-#' @examples
-#' \dontrun{
-#' get_nodes("US1YI")
-#' }
-get_nodes <- function(symbol = "US1YI") {
-  symbol %>%
-    check_index_symbol %>%
-    US_confidence_indices_url %>%
-    xml2::read_html() %>%
-    rvest::html_nodes("table")
-}
-
-
-#' Extract indices data from html node
-#'
-#' @param nodes A \code{xml_nodeset} class data with indices information
-#' @param investor A string with the type of investor:
-#' \code{"Institutional"} or \code{"Individual"}
-#' @note The default value for \code{investor} is "Institutional".
-#' @importFrom magrittr "%>%" set_colnames extract2 extract
-#' @importFrom utils tail
-#' @importFrom rvest html_table
-#' @importFrom dplyr mutate
-#' @importFrom lubridate myd
-#' @seealso \code{\link{get_index}}
-#' @seealso \code{\link{get_nodes}}
-#' @return A \code{data.frame} with ancillary data.
-#' @note This function is only for internal use.
-#' @examples
-#' \dontrun{
-#' find_table_index(get_nodes("US1YI"), investor = "Individual")
-#' }
-#'
-find_table_index <- function(nodes, investor = "Institutional") {
-  Date <- NULL
-  Value <- NULL
-  StdErr <- NULL
-  type_investors <- c("Institutional", "Individual")
-  if (!(investor %in% type_investors)) {
-    stop(paste("Type of investor is not:", type_investors))
-  }
-  n_table <- ifelse(investor == "Institutional", 1L, 3L)
-  nodes %>%
-    magrittr::extract2(n_table) %>%
-    rvest::html_table(header = FALSE, fill = TRUE) %>%
-    magrittr::extract(1:3) %>%
-    utils::tail(n = -3L) %>%
-    magrittr::set_colnames(c("Date", "Value", "StdErr")) %>%
-    dplyr::mutate(Date = lubridate::myd(Date, truncated = 1)) %>%
-    dplyr::mutate(Value = as.numeric(Value)) %>%
-    dplyr::mutate(StdErr = as.numeric(StdErr)) %>%
-    dplyr::mutate(Investor = investor)
-}
-
 #' Get confidence index data from Yale School of Management's web
 #'
 #' Stock market confidence indexes are derived from survey data on
 #' the behavior of U.S. investors.
 #' @inheritParams US_confidence_indices_url
 #' @note The default value for \code{symbol} is "US1YI".
-#' @importFrom dplyr full_join mutate
+#' @importFrom dplyr full_join mutate join_by
 #' @importFrom magrittr set_colnames "%>%"
+#' @importFrom lubridate myd ceiling_date days
 #' @return A \code{data.table} with index value, standard deviation, and type of investor, by date.
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{US_confidence_indices_url}}
-#' @seealso \code{\link{find_table_index}}
-#' @seealso \code{\link{get_nodes}}
 #' @seealso \code{\link{get_index_description}}
 #' @seealso \code{\link{get_index_info}}
 #' @seealso \code{\link{check_index_symbol}}
@@ -103,14 +33,28 @@ find_table_index <- function(nodes, investor = "Institutional") {
 #' }
 get_index <- function(symbol = "US1YI") {
   Investor <- NULL
-  index_nodes <- symbol %>%
+  Date <- NULL
+  col_names <- c("Date", paste0(symbol, c(".Value", ".StdErr")))
+  index_data <- symbol %>%
     check_index_symbol %>%
-    get_nodes
-  index_names <- c("Date", paste0(symbol, c(".Value", ".StdErr")), "Investor")
-  dplyr::full_join(
-    find_table_index(index_nodes, investor = "Institutional"),
-    find_table_index(index_nodes, investor = "Individual"),
-    by = c("Date", "Value", "StdErr", "Investor")) %>%
-    magrittr::set_colnames(index_names) %>%
-    dplyr::mutate(Investor = as.factor(Investor))
+    US_confidence_indices_url %>%
+    utils::read.csv(skip = 1, na.strings = "-")
+
+  # Institutional data
+  index_institutional <- index_data[1:3] %>%
+    magrittr::set_colnames(col_names) %>%
+    dplyr::mutate(Investor = "Institutional")
+  # Individual data
+  index_individual <- index_data[c(1, 4, 5)] %>%
+    magrittr::set_colnames(col_names) %>%
+    dplyr::mutate(Investor = "Individual")
+  # Join both data frames
+  one_day <- lubridate::days(1)
+  suppressMessages(dplyr::full_join(index_institutional,
+                                    index_individual)) %>%
+    dplyr::mutate(Investor = factor(Investor)) %>%
+    dplyr::mutate(Date = lubridate::myd(Date, truncated = 1)) %>%
+    dplyr::mutate(Date = lubridate::ceiling_date(Date,
+                                                 "month") - one_day) %>%
+    dplyr::arrange(Date)
 }

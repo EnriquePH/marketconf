@@ -18,8 +18,6 @@
 #'
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{US_confidence_indices_url}}
-#' @seealso \code{\link{find_table_index}}
-#' @seealso \code{\link{get_nodes}}
 #'
 #' @examples
 #' check_index_symbol("USVI")

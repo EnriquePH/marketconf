@@ -16,8 +16,8 @@
 #' @seealso \code{\link{get_index}}
 #' @seealso \code{\link{get_index_description}}
 #' @seealso \code{\link{get_index_info}}
-#' @references \emph{Yale School of Management}, International Center for Finance: \href{https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence}{Stock Market Confidence Indices}
-#' @references Stock Market Confidence Indices: \href{https://som.yale.edu/faculty-research/centers-initiatives/international-center-for-finance/data/stock-market-confidence-indices/stock-market-confidence-indices}{Terms of Use}
+#' @references \emph{Yale School of Management}, International Center for Finance: \href{https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices}{Stock Market Confidence Indices}
+#' @references Stock Market Confidence Indices: \href{https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices/united-states}{Terms of Use}
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom dplyr mutate select
@@ -28,12 +28,6 @@
 #' US_confidence_indices()
 #' }
 US_confidence_indices <- function() {
-  Dir <- NULL
-  base_url <- paste0(
-    "https://som.yale.edu/faculty-research/",
-    "our-centers-initiatives/international-center-finance/",
-    "data/stock-market-confidence-indices/"
-  )
   data.frame(
     Symbol = c("US1YI",
                "USVI",
@@ -46,8 +40,8 @@ US_confidence_indices <- function() {
       "us-crash-confidence-index"
     ),
     Description = c(
-      "U.S. One Year Index",
-      "U.S. Valuation Index",
+      "U.S. One Year Confidence Index",
+      "U.S. Valuation Confidence Index",
       "U.S. Buy-On-Dips Confidence Index",
       "U.S. Crash Confidence Index"
       ),
@@ -62,7 +56,9 @@ US_confidence_indices <- function() {
       paste("The percent of the population", "who attach little probability",
             " to a stock market crash in the next-six months.")
       ),
-    stringsAsFactors = FALSE) %>%
-    dplyr::mutate(Url = paste0(base_url, Dir)) %>%
-    dplyr::select(-Dir)
+    Url = c("https://shiller-data-public.s3.amazonaws.com/icf_stock_market_confidence_index_table.csv",
+            "https://shiller-data-public.s3.amazonaws.com/icf_stock_market_valuation_index_table.csv",
+            "https://shiller-data-public.s3.amazonaws.com/icf_stock_market_dips_index_table.csv",
+            "https://shiller-data-public.s3.amazonaws.com/icf_stock_market_crash_index_table.csv"),
+    stringsAsFactors = FALSE)
 }

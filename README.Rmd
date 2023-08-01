@@ -2,11 +2,16 @@
 output:
   md_document:
     variant: markdown_github
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
-![License](https://img.shields.io/:license-mit-blue.svg)
-[![Build Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QMR7L28X52GN2)
+
+![License](https://img.shields.io/:license-mit-blue.svg) [![Build
+Status](https://travis-ci.org/EnriquePH/marketconf.svg?branch=master)](https://travis-ci.org/EnriquePH/marketconf)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
+
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -20,11 +25,17 @@ knitr::opts_chunk$set(
 
 # Package `marketconf`: Stock Market Confidence Indexes
 
-The R package `marketconf` reads **U. S. Stock Market Confidence Indexes**
-data from [Yale School of Management's International Center for Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence) web page.
+The R package `marketconf` reads **U. S. Stock Market Confidence
+Indexes** data from [Yale School of Management's International Center
+for
+Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence)
+web page.
 
-This package is for stock market prediction and risk valuation, and
-it can be used with other packages like [`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html), [`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or [`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
+This package is for stock market prediction and risk valuation, and it
+can be used with other packages like
+[`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html),
+[`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or
+[`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
 
 ## Package installation
 
@@ -35,7 +46,7 @@ devtools::install_github("EnriquePH/marketconf")
 
 ## Examples
 
-### List indices
+### Listing confidence indices
 
 The four U.S. Stock market confidence indexes are derived, monthly, from
 survey data on the behavior of investors, these indexes are:
@@ -48,7 +59,7 @@ kable(US_confidence_indices())
 
 ### Plotting
 
-This is a basic example which plots __U.S. Valuation Index__:
+This is a basic example which plots **U.S. Valuation Index**:
 
 ```{r example}
 library(ggplot2)
@@ -61,10 +72,11 @@ ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
   ggtitle(get_index_description(index_symbol))
 ```
 
-
 ## License
 
-The `markerconf` package is under the **MIT License (MIT)**, but the 
-__Stock Market Confidence Indexes__ are produced and copyrighted by the
-__International Center of Finance at the Yale School of Management__.
-See [TERMS OF USE](https://som.yale.edu/faculty-research/centers-initiatives/international-center-for-finance/data/stock-market-confidence-indices/stock-market-confidence-indices) at [Yale University](https://som.yale.edu/)'s web page.
+The `markerconf` package is under the **MIT License (MIT)**, but the
+**Stock Market Confidence Indexes** are produced and copyrighted by the
+**International Center of Finance at the Yale School of Management**.
+See [TERMS OF
+USE](https://som.yale.edu/faculty-research/centers-initiatives/international-center-for-finance/data/stock-market-confidence-indices/stock-market-confidence-indices)
+at [Yale University](https://som.yale.edu/)'s web page.

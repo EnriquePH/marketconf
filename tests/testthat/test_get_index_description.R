@@ -5,8 +5,8 @@ index_symbols <- c("US1YI",
 
 
 index_description <- c(
-  "U.S. One Year Index",
-  "U.S. Valuation Index",
+  "U.S. One Year Confidence Index",
+  "U.S. Valuation Confidence Index",
   "U.S. Buy-On-Dips Confidence Index",
   "U.S. Crash Confidence Index"
 )
