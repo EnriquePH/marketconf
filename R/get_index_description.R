@@ -25,8 +25,8 @@
 get_index_description <- function(symbol = "US1YI") {
   Symbol <- NULL
   Description <- NULL
-    US_confidence_indices() %>%
-      dplyr::filter(Symbol == check_index_symbol(symbol)) %>%
-      dplyr::select(Description) %>%
-      magrittr::extract2(1L)
+  US_confidence_indices() %>%
+    dplyr::filter(Symbol == check_index_symbol(symbol)) %>%
+    dplyr::select(Description) %>%
+    magrittr::extract2(1L)
 }

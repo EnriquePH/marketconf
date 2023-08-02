@@ -27,9 +27,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' US_confidence_indices_url("USCI")
-#' }
+#'
 US_confidence_indices_url <- function(symbol = "US1YI") {
   Symbol <- NULL
   Url <- NULL

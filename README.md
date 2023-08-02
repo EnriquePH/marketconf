@@ -1,8 +1,9 @@
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml)[![AppVeyor
-Build
-Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)![License](https://img.shields.io/:license-mit-blue.svg)
+[![R-CMD-check](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
+![License](https://img.shields.io/:license-mit-blue.svg)
 <!-- badges: end -->
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->

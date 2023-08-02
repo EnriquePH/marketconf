@@ -26,9 +26,8 @@ Get Confidence Index symbol url
 The default value for \code{symbol} is "US1YI".
 }
 \examples{
-\dontrun{
 US_confidence_indices_url("USCI")
-}
+
 }
 \seealso{
 \code{\link{US_confidence_indices}}

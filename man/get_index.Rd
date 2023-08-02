@@ -33,7 +33,7 @@ get_index("USCI")
 \references{
 \emph{Yale School of Management}, International Center for Finance: \href{https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence}{Stock Market Confidence Indices}
 
-Stock Market Confidence Indices: \href{https://som.yale.edu/faculty-research/centers-initiatives/international-center-for-finance/data/stock-market-confidence-indices/stock-market-confidence-indices}{Terms of Use}
+Stock Market Confidence Indices: \href{https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices/united-states}{Terms of Use}
 }
 \seealso{
 \code{\link{US_confidence_indices}}

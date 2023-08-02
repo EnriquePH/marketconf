@@ -86,4 +86,3 @@ The `markerconf` package is under the **MIT License (MIT)**, but the
 __Stock Market Confidence Indexes__ are produced and copyrighted by the
 __International Center of Finance at the Yale School of Management__.
 See [TERMS OF USE](https://som.yale.edu/faculty-research/centers-initiatives/international-center-for-finance/data/stock-market-confidence-indices/stock-market-confidence-indices) at [Yale University](https://som.yale.edu/)'s web page.
-

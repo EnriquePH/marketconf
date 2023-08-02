@@ -14,9 +14,8 @@ A \code{data.frame} with symbols and urls from
 US confidence indices data.frame
 }
 \examples{
-\dontrun{
 US_confidence_indices()
-}
+
 }
 \references{
 \emph{Yale School of Management}, International Center for Finance: \href{https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices}{Stock Market Confidence Indices}
