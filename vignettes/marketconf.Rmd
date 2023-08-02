@@ -1,7 +1,7 @@
 ---
 title: "Package `marketconf`: Stock Market Confidence Indexes"
 author: "Enrique Pérez Herrero"
-date: "08-01-2023"
+date: "08-02-2023"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Stock Market Confidence Indexes}
@@ -18,8 +18,10 @@ knitr::opts_chunk$set(
 
 # Summary
 
-The R package `marketconf` reads **U. S. Stock Market Confidence Indexes**
-data from [Yale School of Management's International Center for Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence) web page.
+The R package `marketconf` reads data on **U. S. Stock Market Confidence
+Indexes** from [Yale School of Management's International Center for
+Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence)
+web page.
 
 This package is for stock market prediction and risk valuation, and
 it can be used with other packages like [`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html), [`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or [`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
@@ -34,8 +36,8 @@ devtools::install_github("EnriquePH/marketconf")
 
 # List available indices
 
-The four U.S. Stock market confidence indexes are derived, monthly, from
-survey data on the behavior of investors, these indexes are:
+The four U.S. Stock market confidence indexes are derived monthly from
+survey data on the investors' behevior. These indices are:
 
 ```{r}
 library(marketconf)
@@ -66,7 +68,7 @@ kable(head(index_df))
 
 # Plotting
 
-This is a basic example which plots __U.S. Valuation Index__:
+This is a basic example that plots the __U.S. Valuation Confidence Index__:
 
 ```{r example}
 library(ggplot2)

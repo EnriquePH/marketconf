@@ -4,15 +4,14 @@
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
 ![License](https://img.shields.io/:license-mit-blue.svg)
-<!-- badges: end -->
 
+<!-- badges: end -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # Package `marketconf`: Stock Market Confidence Indexes
 
-The R package `marketconf` reads **U. S. Stock Market Confidence
-Indexes** data from [Yale School of Management’s International Center
-for
+The R package `marketconf` reads data on **U. S. Stock Market Confidence
+Indexes** from the [Yale School of Management’s International Center for
 Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence)
 web page.
 
@@ -52,7 +51,7 @@ kable(US_confidence_indices())
 
 ### Plotting
 
-This is a basic example which plots **U.S. Valuation Index**:
+This is a basic example that plots the **U.S. Valuation Index**:
 
 ``` r
 library(ggplot2)
