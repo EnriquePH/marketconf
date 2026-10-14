@@ -18,7 +18,8 @@ Description:
         U.S. Crash Confidence Index.
 Depends: R (>= 3.4.1)
 License: MIT + file LICENSE
-URL: https://github.com/EnriquePH/marketconf
+URL: https://github.com/EnriquePH/marketconf,
+    https://enriqueph.github.io/marketconf/
 BugReports: https://github.com/EnriquePH/marketconf/issues
 Encoding: UTF-8
 Imports:

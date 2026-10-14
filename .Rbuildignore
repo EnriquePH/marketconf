@@ -6,3 +6,7 @@ TERMS OF USE
 ^assets$
 ^\.github$
 ^LICENSE\.md$
+^\.lintr$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

@@ -7,6 +7,7 @@
 #  The MIT License (MIT)
 #  ----------------------------------------------------------------------------
 
+# nolint start: line_length_linter.
 #' US confidence indices data.frame
 #'
 #' @return A \code{data.frame} with symbols and urls from
@@ -75,3 +76,4 @@ US_confidence_indices <- function() {
     stringsAsFactors = FALSE
   )
 }
+# nolint end

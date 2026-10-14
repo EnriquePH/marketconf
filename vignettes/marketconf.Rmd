@@ -1,5 +1,5 @@
 ---
-title: "Package `marketconf`: Stock Market Confidence Indexes"
+title: "Stock Market Confidence Indexes"
 author: "Enrique Pérez Herrero"
 date: "08-02-2023"
 output: rmarkdown::html_vignette

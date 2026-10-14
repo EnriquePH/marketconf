@@ -7,6 +7,7 @@
 #  The MIT License (MIT)
 #  ----------------------------------------------------------------------------
 
+# nolint start: line_length_linter.
 #' Get confidence index data from Yale School of Management's web
 #'
 #' Stock market confidence indexes are derived from survey data on
@@ -60,3 +61,4 @@ get_index <- function(symbol = "US1YI") {
                                                  "month") - one_day) %>%
     dplyr::arrange(Date)
 }
+# nolint end
