@@ -68,7 +68,7 @@ US_confidence_indices <- function() {
       paste(
         "The percent of the population",
         "who attach little probability",
-        " to a stock market crash in the next-six months."
+        "to a stock market crash in the next six months."
       )
     ),
     Url = Url,

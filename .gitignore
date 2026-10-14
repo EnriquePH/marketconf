@@ -4,3 +4,5 @@
 .Ruserdata
 draft
 inst/doc
+vignettes/*.html
+vignettes/*.R

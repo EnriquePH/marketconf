@@ -1,7 +1,7 @@
 ---
 output:
   md_document:
-    variant: markdown_github
+    variant: gfm
 editor_options: 
   markdown: 
     wrap: 72
@@ -10,8 +10,6 @@ editor_options:
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
 ![License](https://img.shields.io/:license-mit-blue.svg)
 
 <!-- badges: end -->
@@ -22,7 +20,7 @@ Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "assets/README-"
 )
 ```
 
@@ -37,9 +35,9 @@ web page.
 This package is designed for stock market prediction and risk valuation,
 and it is compatible with other packages like:
 
-[`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html),
-[`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or
-[`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
+[`quantmod`](https://CRAN.R-project.org/package=quantmod),
+[`TTR`](https://CRAN.R-project.org/package=TTR) or
+[`tidyquant`](https://CRAN.R-project.org/package=tidyquant)
 
 ## Package installation
 
@@ -78,7 +76,7 @@ ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
 
 ## License
 
-The `markerconf` package is licensed under the **MIT License (MIT)**, but the
+The `marketconf` package is licensed under the **MIT License (MIT)**, but the
 __Stock Market Confidence Indexes__ are produced and copyrighted by the
 __International Center of Finance at the Yale School of Management__. Please
 refer to the [TERMS OF

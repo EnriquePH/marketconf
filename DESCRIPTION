@@ -1,8 +1,8 @@
 Package: marketconf
 Type: Package
 Title: Stock Market Confidence Indices from Yale School of Management
-Date: 2018-02-24
-Version: 1.0.1
+Date: 2026-10-14
+Version: 1.0.2
 Authors@R: person("Enrique", "Pérez Herrero",
     email = "eph.project1500@gmail.com",
     role = c("aut", "cre", "cph"))
@@ -17,16 +17,18 @@ Description:
         U.S. Buy-On-Dips Confidence Index.
         U.S. Crash Confidence Index.
 Depends: R (>= 3.4.1)
-License: file LICENSE
+License: MIT + file LICENSE
+URL: https://github.com/EnriquePH/marketconf
+BugReports: https://github.com/EnriquePH/marketconf/issues
 Encoding: UTF-8
-LazyData: true
 Imports:
     magrittr,
     dplyr,
-    lubridate
-RoxygenNote: 7.2.3
-Suggests: knitr,
+    lubridate (>= 1.7.10)
+Suggests: curl,
+    knitr,
     rmarkdown,
     ggplot2,
-    testthat
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.0

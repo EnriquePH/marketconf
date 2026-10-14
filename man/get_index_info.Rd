@@ -16,7 +16,7 @@ get_index_info(symbol = "US1YI")
 }}
 }
 \value{
-A string with the Confidence Index description
+A string with the Confidence Index information
 }
 \description{
 Find Confidence Index information

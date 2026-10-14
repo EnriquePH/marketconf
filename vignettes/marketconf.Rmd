@@ -24,7 +24,7 @@ Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/internati
 web page.
 
 This package is for stock market prediction and risk valuation, and
-it can be used with other packages like [`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html), [`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or [`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
+it can be used with other packages like [`quantmod`](https://CRAN.R-project.org/package=quantmod), [`TTR`](https://CRAN.R-project.org/package=TTR) or [`tidyquant`](https://CRAN.R-project.org/package=tidyquant)
 
 
 # Package installation
@@ -37,7 +37,7 @@ devtools::install_github("EnriquePH/marketconf")
 # List available indices
 
 The four U.S. Stock market confidence indexes are derived monthly from
-survey data on the investors' behevior. These indices are:
+survey data on the investors' behavior. These indices are:
 
 ```{r}
 library(marketconf)
@@ -83,7 +83,7 @@ ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
 
 # License
 
-The `markerconf` package is licensed under the **MIT License (MIT)**, but the
+The `marketconf` package is licensed under the **MIT License (MIT)**, but the
 __Stock Market Confidence Indexes__ are produced and copyrighted by the
 __International Center of Finance at the Yale School of Management__. Please
 refer to the [TERMS OF

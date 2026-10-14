@@ -16,7 +16,9 @@ get_index(symbol = "US1YI")
 }}
 }
 \value{
-A \code{data.table} with index value, standard deviation, and type of investor, by date.
+A \code{data.frame} with columns \code{Date} (last day of the
+  survey month), \code{<symbol>.Value}, \code{<symbol>.StdErr} and
+  \code{Investor} (factor: "Individual" or "Institutional"), sorted by date.
 }
 \description{
 Stock market confidence indexes are derived from survey data on

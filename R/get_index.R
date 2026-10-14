@@ -13,10 +13,12 @@
 #' the behavior of U.S. investors.
 #' @inheritParams US_confidence_indices_url
 #' @note The default value for \code{symbol} is "US1YI".
-#' @importFrom dplyr full_join mutate join_by
+#' @importFrom dplyr bind_rows mutate arrange
 #' @importFrom magrittr set_colnames "%>%"
-#' @importFrom lubridate myd ceiling_date days
-#' @return A \code{data.table} with index value, standard deviation, and type of investor, by date.
+#' @importFrom lubridate my ceiling_date days
+#' @return A \code{data.frame} with columns \code{Date} (last day of the
+#'   survey month), \code{<symbol>.Value}, \code{<symbol>.StdErr} and
+#'   \code{Investor} (factor: "Individual" or "Institutional"), sorted by date.
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{US_confidence_indices_url}}
 #' @seealso \code{\link{get_index_description}}
@@ -34,11 +36,12 @@
 get_index <- function(symbol = "US1YI") {
   Investor <- NULL
   Date <- NULL
+  symbol <- check_index_symbol(symbol)
   col_names <- c("Date", paste0(symbol, c(".Value", ".StdErr")))
   index_data <- symbol %>%
-    check_index_symbol %>%
     US_confidence_indices_url %>%
-    utils::read.csv(skip = 1, na.strings = "-")
+    utils::read.csv(skip = 1, na.strings = "-",
+                    colClasses = c("character", rep("numeric", 4)))
 
   # Institutional data
   index_institutional <- index_data[1:3] %>%
@@ -48,12 +51,11 @@ get_index <- function(symbol = "US1YI") {
   index_individual <- index_data[c(1, 4, 5)] %>%
     magrittr::set_colnames(col_names) %>%
     dplyr::mutate(Investor = "Individual")
-  # Join both data frames
+  # Stack both data frames
   one_day <- lubridate::days(1)
-  suppressMessages(dplyr::full_join(index_institutional,
-                                    index_individual)) %>%
+  dplyr::bind_rows(index_institutional, index_individual) %>%
     dplyr::mutate(Investor = factor(Investor)) %>%
-    dplyr::mutate(Date = lubridate::myd(Date, truncated = 1)) %>%
+    dplyr::mutate(Date = lubridate::my(Date)) %>%
     dplyr::mutate(Date = lubridate::ceiling_date(Date,
                                                  "month") - one_day) %>%
     dplyr::arrange(Date)

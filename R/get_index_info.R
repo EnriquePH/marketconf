@@ -14,7 +14,7 @@
 #' @note The default value for \code{symbol} is "US1YI".
 #' @importFrom magrittr "%>%" extract2
 #' @importFrom dplyr filter select
-#' @return A string with the Confidence Index description
+#' @return A string with the Confidence Index information
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{get_index}}
 #' @seealso \code{\link{get_index_description}}

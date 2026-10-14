@@ -24,8 +24,13 @@
 #' @export
 check_index_symbol <- function(symbol) {
   symbol_list <- US_confidence_indices()$Symbol
+  if (!is.character(symbol) || length(symbol) != 1L || is.na(symbol)) {
+    stop("`symbol` must be a single character string", call. = FALSE)
+  }
   if (!(symbol %in% symbol_list)) {
-    stop(paste("Confidence Index Symbol not found"))
+    stop("Confidence Index Symbol not found: \"", symbol, "\". ",
+         "Valid symbols are: ", paste(symbol_list, collapse = ", "),
+         call. = FALSE)
   }
   symbol
 }

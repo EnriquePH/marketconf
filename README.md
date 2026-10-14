@@ -1,11 +1,10 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/marketconf?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/marketconf)
 ![License](https://img.shields.io/:license-mit-blue.svg)
 
 <!-- badges: end -->
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # Package `marketconf`: Stock Market Confidence Indexes
@@ -18,9 +17,9 @@ web page.
 This package is designed for stock market prediction and risk valuation,
 and it is compatible with other packages like:
 
-[`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html),
-[`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or
-[`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
+[`quantmod`](https://CRAN.R-project.org/package=quantmod),
+[`TTR`](https://CRAN.R-project.org/package=TTR) or
+[`tidyquant`](https://CRAN.R-project.org/package=tidyquant)
 
 ## Package installation
 
@@ -42,12 +41,12 @@ library(knitr)
 kable(US_confidence_indices())
 ```
 
-| Symbol | Dir                                     | Description                       | Info                                                                                                        | Url                                                                                        |
-|:--|:----------|:---------|:--------------------------|:----------------------|
-| US1YI  | united-states-one-year-index            | U.S. One Year Confidence Index    | The percent of the population expecting an increase in the Dow in the coming year.                          | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_confidence_index_table.csv> |
-| USVI   | united-states-valuation-index           | U.S. Valuation Confidence Index   | The percent of the population who think that the market is not too high.                                    | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_valuation_index_table.csv>  |
-| USBODI | united-states-buy-dips-confidence-index | U.S. Buy-On-Dips Confidence Index | The percent of the population expecting a rebound the next day should the market ever drop 3% in one day.   | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_dips_index_table.csv>       |
-| USCI   | us-crash-confidence-index               | U.S. Crash Confidence Index       | The percent of the population who attach little probability to a stock market crash in the next-six months. | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_crash_index_table.csv>      |
+| Symbol | Dir | Description | Info | Url |
+|:---|:---|:---|:---|:---|
+| US1YI | united-states-one-year-index | U.S. One Year Confidence Index | The percent of the population expecting an increase in the Dow in the coming year. | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_confidence_index_table.csv> |
+| USVI | united-states-valuation-index | U.S. Valuation Confidence Index | The percent of the population who think that the market is not too high. | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_valuation_index_table.csv> |
+| USBODI | united-states-buy-dips-confidence-index | U.S. Buy-On-Dips Confidence Index | The percent of the population expecting a rebound the next day should the market ever drop 3% in one day. | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_dips_index_table.csv> |
+| USCI | us-crash-confidence-index | U.S. Crash Confidence Index | The percent of the population who attach little probability to a stock market crash in the next-six months. | <https://shiller-data-public.s3.amazonaws.com/icf_stock_market_crash_index_table.csv> |
 
 ### Plotting
 
@@ -64,11 +63,11 @@ ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
   ggtitle(get_index_description(index_symbol))
 ```
 
-![](README-example-1.png)
+![](assets/README-example-1.png)<!-- -->
 
 ## License
 
-The `markerconf` package is licensed under the **MIT License (MIT)**,
+The `marketconf` package is licensed under the **MIT License (MIT)**,
 but the **Stock Market Confidence Indexes** are produced and copyrighted
 by the **International Center of Finance at the Yale School of
 Management**. Please refer to the [TERMS OF
