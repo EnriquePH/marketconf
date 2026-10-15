@@ -1,7 +1,11 @@
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/marketconf)](https://CRAN.R-project.org/package=marketconf)
 [![R-CMD-check](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml)
-![License](https://img.shields.io/:license-mit-blue.svg)
+[![lint](https://github.com/EnriquePH/marketconf/actions/workflows/lint.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/lint.yaml)
+[![License:
+MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/EnriquePH/marketconf/blob/master/LICENSE.md)
 
 <!-- badges: end -->
 
