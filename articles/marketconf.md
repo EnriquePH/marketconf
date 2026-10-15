@@ -15,10 +15,19 @@ can be used with other packages like
 
 ## Package installation
 
+Install the released version from CRAN:
+
 ``` r
 
-library(devtools)
-devtools::install_github("EnriquePH/marketconf")
+install.packages("marketconf")
+```
+
+Or the development version from GitHub:
+
+``` r
+
+# install.packages("remotes")
+remotes::install_github("EnriquePH/marketconf")
 ```
 
 ## List available indices
@@ -60,9 +69,19 @@ get_index_info(index_symbol)
 
 ## Load a given index into a `data.frame`
 
+The data is downloaded from the internet. If it is not available,
+[`get_index()`](https://enriqueph.github.io/marketconf/reference/get_index.md)
+shows a message and returns `NULL`, and the remaining examples in this
+vignette are not evaluated.
+
 ``` r
 
 index_df <- get_index(index_symbol)
+has_data <- !is.null(index_df)
+```
+
+``` r
+
 kable(head(index_df))
 ```
 
@@ -87,9 +106,11 @@ library(ggplot2)
 index_symbol <- "USVI"
 index_df <- get_index(index_symbol)
 
-ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
-  geom_line() +
-  ggtitle(get_index_description(index_symbol))
+if (!is.null(index_df)) {
+  ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
+    geom_line() +
+    ggtitle(get_index_description(index_symbol))
+}
 ```
 
 ![](marketconf_files/figure-html/example-1.png)

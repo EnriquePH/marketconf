@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Stock Market Confidence Indices from Yale School of Management">
-<meta name="description" content="This R package reads confidence indexes data from Yale School of Management's International Center for Finance web page. The four U.S. Stock market confidence indexes are derived, monthly, from survey data on the behavior of investors, these indexes are: U.S. One Year Confidence Index. U.S. Valuation Confidence Index. U.S. Buy-On-Dips Confidence Index. U.S. Crash Confidence Index.">
-<meta property="og:description" content="This R package reads confidence indexes data from Yale School of Management's International Center for Finance web page. The four U.S. Stock market confidence indexes are derived, monthly, from survey data on the behavior of investors, these indexes are: U.S. One Year Confidence Index. U.S. Valuation Confidence Index. U.S. Buy-On-Dips Confidence Index. U.S. Crash Confidence Index.">
+<meta name="description" content="Downloads the U.S. stock market confidence indices (One Year, Valuation, Buy-On-Dips and Crash) published monthly by the International Center for Finance at the Yale School of Management &lt;https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices&gt;. The indices are derived from survey data on the behavior of individual and institutional investors.">
+<meta property="og:description" content="Downloads the U.S. stock market confidence indices (One Year, Valuation, Buy-On-Dips and Crash) published monthly by the International Center for Finance at the Yale School of Management &lt;https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices&gt;. The indices are derived from survey data on the behavior of individual and institutional investors.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -33,6 +33,7 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="articles/marketconf.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
@@ -58,9 +59,13 @@
 <div class="section level2">
 <h2 id="package-installation">Package installation<a class="anchor" aria-label="anchor" href="#package-installation"></a>
 </h2>
+<p>Install the released version from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"EnriquePH/marketconf"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"marketconf"</span><span class="op">)</span></span></code></pre></div>
+<p>Or the development version from GitHub:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"EnriquePH/marketconf"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
@@ -69,7 +74,7 @@
 <h3 id="listing-confidence-indices">Listing confidence indices<a class="anchor" aria-label="anchor" href="#listing-confidence-indices"></a>
 </h3>
 <p>The four U.S. stock market confidence indexes are derived monthly from survey data on investors’ behavior. These indexes are:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EnriquePH/marketconf" class="external-link">marketconf</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="reference/US_confidence_indices.html">US_confidence_indices</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -124,7 +129,7 @@
 <h3 id="plotting">Plotting<a class="anchor" aria-label="anchor" href="#plotting"></a>
 </h3>
 <p>This is a basic example that plots the <strong>U.S. Valuation Index</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">index_symbol</span> <span class="op">&lt;-</span> <span class="st">"USVI"</span></span>
