@@ -19,6 +19,8 @@ get_index(symbol = "US1YI")
 A \code{data.frame} with columns \code{Date} (last day of the
   survey month), \code{<symbol>.Value}, \code{<symbol>.StdErr} and
   \code{Investor} (factor: "Individual" or "Institutional"), sorted by date.
+  If the data cannot be downloaded, a message is shown and \code{NULL} is
+  returned invisibly.
 }
 \description{
 Stock market confidence indexes are derived from survey data on
@@ -28,8 +30,9 @@ the behavior of U.S. investors.
 The default value for \code{symbol} is "US1YI".
 }
 \examples{
-\dontrun{
-get_index("USCI")
+\donttest{
+index_df <- get_index("USCI")
+if (!is.null(index_df)) head(index_df)
 }
 }
 \references{

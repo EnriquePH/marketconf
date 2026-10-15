@@ -20,6 +20,8 @@
 #' @return A \code{data.frame} with columns \code{Date} (last day of the
 #'   survey month), \code{<symbol>.Value}, \code{<symbol>.StdErr} and
 #'   \code{Investor} (factor: "Individual" or "Institutional"), sorted by date.
+#'   If the data cannot be downloaded, a message is shown and \code{NULL} is
+#'   returned invisibly.
 #' @seealso \code{\link{US_confidence_indices}}
 #' @seealso \code{\link{US_confidence_indices_url}}
 #' @seealso \code{\link{get_index_description}}
@@ -31,18 +33,28 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' get_index("USCI")
+#' \donttest{
+#' index_df <- get_index("USCI")
+#' if (!is.null(index_df)) head(index_df)
 #' }
 get_index <- function(symbol = "US1YI") {
   Investor <- NULL
   Date <- NULL
   symbol <- check_index_symbol(symbol)
   col_names <- c("Date", paste0(symbol, c(".Value", ".StdErr")))
-  index_data <- symbol %>%
-    US_confidence_indices_url %>%
-    utils::read.csv(skip = 1, na.strings = "-",
-                    colClasses = c("character", rep("numeric", 4)))
+  index_url <- US_confidence_indices_url(symbol)
+  index_data <- tryCatch(
+    utils::read.csv(index_url, skip = 1, na.strings = "-",
+                    colClasses = c("character", rep("numeric", 4))),
+    error = function(e) conditionMessage(e),
+    warning = function(w) conditionMessage(w)
+  )
+  if (!is.data.frame(index_data) || ncol(index_data) != 5L) {
+    reason <- if (is.character(index_data)) index_data else "unexpected format"
+    message("Could not download confidence index data from ", index_url,
+            " (", reason, ").")
+    return(invisible(NULL))
+  }
 
   # Institutional data
   index_institutional <- index_data[1:3] %>%

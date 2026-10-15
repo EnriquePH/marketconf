@@ -27,3 +27,11 @@ for (index_symbol in index_symbols) {
 test_that("get_index gives error with wrong code", {
   testthat::expect_error(get_index("XXX"), "not found")
 })
+
+test_that("get_index fails gracefully when the data is unavailable", {
+  testthat::local_mocked_bindings(
+    US_confidence_indices_url = function(symbol) "http://127.0.0.1:1/nope.csv"
+  )
+  testthat::expect_message(index_df <- get_index("USCI"), "Could not download")
+  testthat::expect_null(index_df)
+})

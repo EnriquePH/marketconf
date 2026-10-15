@@ -1,7 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-draft
-TERMS OF USE
+^draft$
+^TERMS OF USE$
 ^README\.Rmd$
 ^assets$
 ^\.github$
@@ -10,3 +10,4 @@ TERMS OF USE
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^cran-comments\.md$

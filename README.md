@@ -23,9 +23,17 @@ and it is compatible with other packages like:
 
 ## Package installation
 
+Install the released version from CRAN:
+
 ``` r
-library(devtools)
-devtools::install_github("EnriquePH/marketconf")
+install.packages("marketconf")
+```
+
+Or the development version from GitHub:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("EnriquePH/marketconf")
 ```
 
 ## Examples

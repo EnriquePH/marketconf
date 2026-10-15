@@ -7,19 +7,15 @@ Authors@R: person("Enrique", "Pérez Herrero",
     email = "eph.project1500@gmail.com",
     role = c("aut", "cre", "cph"))
 Maintainer: Enrique Pérez Herrero <eph.project1500@gmail.com>
-Description:
-    This R package reads confidence indexes data from Yale School of
-    Management's International Center for Finance web page.
-    The four U.S. Stock market confidence indexes are derived, monthly, from
-    survey data on the behavior of investors, these indexes are:
-        U.S. One Year Confidence Index.
-        U.S. Valuation Confidence Index.
-        U.S. Buy-On-Dips Confidence Index.
-        U.S. Crash Confidence Index.
+Description: Downloads the U.S. stock market confidence indices (One Year,
+    Valuation, Buy-On-Dips and Crash) published monthly by the International
+    Center for Finance at the Yale School of Management
+    <https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices>.
+    The indices are derived from survey data on the behavior of individual and
+    institutional investors.
 Depends: R (>= 3.4.1)
 License: MIT + file LICENSE
-URL: https://github.com/EnriquePH/marketconf,
-    https://enriqueph.github.io/marketconf/
+URL: https://github.com/EnriquePH/marketconf
 BugReports: https://github.com/EnriquePH/marketconf/issues
 Encoding: UTF-8
 Imports:
@@ -30,6 +26,7 @@ Suggests: curl,
     knitr,
     rmarkdown,
     ggplot2,
-    testthat (>= 3.0.0)
+    testthat (>= 3.1.7)
 VignetteBuilder: knitr
 Config/roxygen2/version: 8.1.0
+Config/testthat/edition: 3
