@@ -1,7 +1,5 @@
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/marketconf)](https://CRAN.R-project.org/package=marketconf)
 [![R-CMD-check](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/R-CMD-check.yaml)
 [![lint](https://github.com/EnriquePH/marketconf/actions/workflows/lint.yaml/badge.svg)](https://github.com/EnriquePH/marketconf/actions/workflows/lint.yaml)
 [![License:
