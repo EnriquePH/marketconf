@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/EnriquePH/marketconf/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/EnriquePH/marketconf/blob/main/DESCRIPTION)
 
 Pérez Herrero E (2026). *marketconf: Stock Market Confidence Indices
 from Yale School of Management*. R package version 1.0.2,
